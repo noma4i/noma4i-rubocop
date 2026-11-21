@@ -10,9 +10,9 @@ Add to `.rubocop.yml`:
 
 ```yaml
 plugins:
-  - noma4i-rubocop
   - rubocop-performance
   - rubocop-haml
+  - noma4i-rubocop
 ```
 
 ## Disable a cop in a project
@@ -23,7 +23,10 @@ Noma4i/NoRawSql:
 ```
 
 Override any cop using its standard RuboCop configuration. List the two extension
-plugins explicitly to load their rules and Haml parser.
+plugins explicitly to load their rules and Haml parser. Keep noma4i-rubocop last:
+plugins load in order and a later plugin resets the settings of an earlier one,
+so noma4i-rubocop must come after rubocop-performance and rubocop-haml to keep
+its settings for their cops.
 
 For baseline-aware cops, `.rubocop/baseline.yml` maps cop names to paths and
 allowed offense counts, relative to the project root:
