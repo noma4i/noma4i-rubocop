@@ -1,0 +1,20 @@
+plugins:
+  - noma4i-rubocop
+  - rubocop-performance
+  - rubocop-haml
+
+Naming/FileName:
+  Exclude:
+    - lib/noma4i-rubocop.rb
+
+Lint/RedundantDirGlobSort:
+  Exclude:
+    - lib/noma4i/rubocop.rb
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - lib/noma4i/rubocop.rb
+    - lib/noma4i/rubocop/version.rb
+    - lib/rubocop/cop/noma4i/no_module_function.rb
+    - lib/rubocop/cop/noma4i/no_raw_sql.rb
+    - lib/rubocop/cop/noma4i/no_rescue_standard_error.rb
